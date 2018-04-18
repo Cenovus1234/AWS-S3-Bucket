@@ -10,8 +10,8 @@ node{
    stage("Terraform plan"){
    sh 'terraform plan -var key_name=Devops_key'
    }
-   stage("Terraform create"){
-   sh 'terraform create -auto-approve -var key_name=Devops_key'
+   stage("Terraform apply"){
+   sh 'terraform apply -auto-approve -var key_name=Devops_key'
    }
    stage("Terraform Destroy"){
    }
