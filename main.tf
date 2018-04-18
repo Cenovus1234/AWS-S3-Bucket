@@ -14,13 +14,13 @@ resource "aws_s3_bucket" "echo_stage_bucket" {
 	      }
 }
 
-data "terraform_remote_state" "store_tf_state" {
-   backend= "s3"
+#data "terraform_remote_state" "store_tf_state" {
+ #  backend= "s3"
 
-	config {
-	bucket = "$(aws_s3_bucket.echo_stage_bucket.bucket)"
-	key = "state_file/terraform.tfstate"
-	region = "us-east-1"
-	profile = "default"
-     }
-}
+#	config {
+#	bucket = "$(aws_s3_bucket.echo_stage_bucket.bucket)"
+#	key = "state_file/terraform.tfstate"
+#	region = "us-east-1"
+#	profile = "default"
+ #    }
+#}
