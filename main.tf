@@ -12,6 +12,6 @@ provider "aws" {
          Name = "terraform-instance"
         }}
    resource "aws_s3_bucket" "mtanweer" {
-        bucket= "my-test-buckett"
+        bucket= "myfirst-test-buckett"
         acl= "private"
  }
