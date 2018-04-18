@@ -1,10 +1,10 @@
 #main.tf script in terraform
 
-#provider "aws" {
-#	region= "us-east-2"
-#}
+provider "aws" {
+	region= "us-east-2"
+}
 
-resource "aws_s3_bucket" "echo_stage_bucket" {
+resource "aws_s3_bucket" "b" {
 	bucket= "echo_stage_test_bucket"
 	acl= "private"
 
@@ -14,13 +14,3 @@ resource "aws_s3_bucket" "echo_stage_bucket" {
 	      }
 }
 
-#data "terraform_remote_state" "store_tf_state" {
- #  backend= "s3"
-
-#	config {
-#	bucket = "$(aws_s3_bucket.echo_stage_bucket.bucket)"
-#	key = "state_file/terraform.tfstate"
-#	region = "us-east-1"
-#	profile = "default"
- #    }
-#}
