@@ -1,16 +1,17 @@
-#main.tf script in terraform
+provider "aws" {
+        region = "us-east-2"
+ }
 
-#provider "aws" {
-#	region= "us-east-2"
-#}
-
-resource "aws_s3_bucket" "b" {
-	bucket= "echo_stage_test_bucket"
-	acl= "private"
-
-	tages {
-	     Name= "s3 bucket"
-	     Environment= "Dev"
-	      }
-}
-
+   resource "aws_instance" "mtanweer" {
+        ami = "ami-916f59f4"
+        instance_type = "t2.micro"
+        key_name = "Devops_key"
+        security_groups= ["tan-sec"]
+        #group ID= sg-2979f442
+        tags {
+         Name = "terraform-instance"
+        }}
+   resource "aws_s3_bucket" "b" {
+        bucket= "echo_stage_test_bucket"
+        acl= "private"
+ }
