@@ -11,7 +11,7 @@ node{
    sh 'terraform plan -var key_name=Devops_key'
    }
    stage("Terraform apply"){
-   sh 'terraform apply  -var key_name=Devops_key'
+   sh 'terraform apply -auto-approve -var key_name=Devops_key'
    }
    stage("Terraform Destroy"){
    }
