@@ -9,9 +9,9 @@ provider "aws" {
         security_groups= ["tan-sec"]
         #group ID= sg-2979f442
         tags {
-         Name = "terraform-instance"
+         Name = "terraform-instance-sunila"
         }}
    resource "aws_s3_bucket" "mtanweer" {
-        bucket= "myaws-s3-bucket"
+        bucket= "myaws-s3-bucket-sunila"
         acl= "private"
  }
