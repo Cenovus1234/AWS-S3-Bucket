@@ -17,10 +17,10 @@ provider "aws" {
  }
 
 
-provider "aws"
-{
-        region = "us-west-2"
-}
+#provider "aws"
+#{
+ #       region = "us-west-2"
+#}
 
 #creating VPC
 resource "aws_vpc" "mtanweer"
