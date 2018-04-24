@@ -12,7 +12,7 @@ provider "aws" {
          Name = "terraform-instance-sunila"
         }}
    resource "aws_s3_bucket" "mtanweer" {
-        bucket= "myaws-s3-bucket-sunila"
+        bucket= "s3-bucket"
         acl= "private"
  }
 
@@ -23,7 +23,7 @@ provider "aws" {
 #}
 
 #creating VPC
-resource "aws_vpc" "mtanweer"
+resource "aws_vpc" "main"
 {
         cidr_block = "190.160.0.0/16"
         instance_tenancy = "default"
@@ -38,7 +38,7 @@ resource "aws_vpc" "mtanweer"
 
 resource "aws_subnet" "mtanweer"
 {
-        vpc_id = "$(aws_vpc.mtanweer.id)"
+        vpc_id = "$(aws_vpc.main.id)"
         cidr_block = "190.160.0.0/24"
 
         tags {
