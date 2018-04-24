@@ -15,3 +15,34 @@ provider "aws" {
         bucket= "myaws-s3-bucket-sunila"
         acl= "private"
  }
+
+
+provider "aws"
+{
+        region = "us-west-2"
+}
+
+#creating VPC
+resource "aws_vpc" "mtanweer"
+{
+        cidr_block = "190.160.0.0/16"
+        instance_tenancy = "default"
+
+        tags {
+                Name = "aws_vpc"
+                Locatio = "Bangalore"
+        }
+}
+
+#Creating subnet
+
+resource "aws_subnet" "mtanweer"
+{
+        vpc_id = "$(aws_vpc.mtanweer.id)"
+        cidr_block = "190.160.0.0/24"
+
+        tags {
+                Name = "my_First_Subnet"
+        }
+}
+
