@@ -30,7 +30,7 @@ resource "aws_vpc" "main"
 
         tags {
                 Name = "aws_vpc"
-                Locatio = "Bangalore"
+                Location = "Bangalore"
         }
 }
 
