@@ -12,7 +12,7 @@ provider "aws" {
          Name = "terraform-instance"
         }}
    resource "aws_s3_bucket" "b" {
-        bucket= "my_bucket"
+        bucket= "mybucket"
         acl= "private"
  }
 
