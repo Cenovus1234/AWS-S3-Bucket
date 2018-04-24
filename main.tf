@@ -11,8 +11,8 @@ provider "aws" {
         tags {
          Name = "terraform-instance"
         }}
-   resource "aws_s3_bucket" "mtanweer" {
-        bucket= "s3-bucket"
+   resource "aws_s3_bucket" "b" {
+        bucket= "my_bucket"
         acl= "private"
  }
 
